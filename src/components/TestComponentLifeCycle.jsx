@@ -25,6 +25,10 @@ export class LifeCycle extends Component {
     event.currentTarget.reset();
   };
 
+  deleteTodoItem = todoIndex => {
+    this.setState(state => ({ todos: state.todos.splice(todoIndex, 1) }));
+  };
+
   render() {
     return (
       <div>
@@ -38,7 +42,12 @@ export class LifeCycle extends Component {
         </form>
         <div>
           {this.state.todos.map((todoItem, todoIndex) => (
-            <p key={`todo-item-${todoIndex}`}>{todoItem}</p>
+            <div key={`todo-item-${todoIndex}`}>
+              <p>{todoItem}</p>
+              <button onClick={() => this.deleteTodoItem(todoIndex)}>
+                Delete
+              </button>
+            </div>
           ))}
         </div>
       </div>
