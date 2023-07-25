@@ -11,6 +11,12 @@ export class LifeCycle extends Component {
     }
   }
 
+  submitFunction = event => {
+    this.setState(state => ({
+      todos: [...state.todos, sta],
+    }));
+  };
+
   render() {
     return (
       <div>
