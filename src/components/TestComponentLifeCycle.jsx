@@ -1,7 +1,9 @@
 import { Component } from 'react';
 
 export class LifeCycle extends Component {
-  state = {
+  state = JSON.parse(localStorage.getItem(todos)) || INITIAL_STATE;
+
+  static INITIAL_STATE = {
     todos: [],
     filter: '',
   };
