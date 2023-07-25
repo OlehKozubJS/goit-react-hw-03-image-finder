@@ -25,10 +25,10 @@ export class LifeCycle extends Component {
     event.currentTarget.reset();
   };
 
-  deleteTodoItem = todoIndex => {
-    console.log(todoIndex);
+  deleteTodoItem = key => {
+    console.log(key);
     this.setState(state => ({
-      todos: todoIndex === 0 ? [] : state.todos.splice(todoIndex, 1),
+      todos: state.todos.filter(todoItem => todoItem.key !== key),
     }));
   };
 
@@ -47,7 +47,11 @@ export class LifeCycle extends Component {
           {this.state.todos.map((todoItem, todoIndex) => (
             <div key={`todo-item-${todoIndex}`}>
               <p>{todoItem}</p>
-              <button onClick={() => this.deleteTodoItem(todoIndex)}>
+              <button
+                onClick={event =>
+                  this.deleteTodoItem(event.currentTarget.parentNode.key)
+                }
+              >
                 Delete
               </button>
             </div>
