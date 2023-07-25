@@ -50,11 +50,11 @@ export class LifeCycle extends Component {
           <button type="submit">Enter</button>
         </form>
         <div>
-          {this.state.todos.map((todoItem, todoIndex) => (
-            <div key={`todo-item-${todoIndex}`}>
+          {this.state.todos.map(todoItem => (
+            <div key={`todo-item-${todoItem.key}`}>
               <p>{todoItem.text}</p>
               <button
-                id={`todo-item-${todoIndex}`}
+                id={`todo-item-${todoItem.key}`}
                 onClick={event => this.deleteTodoItem(event.currentTarget.id)}
               >
                 Delete
