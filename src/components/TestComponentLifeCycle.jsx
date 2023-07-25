@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
 export class LifeCycle extends Component {
-  state = JSON.parse(localStorage.getItem('todos')) || LifeCycle.INITIAL_STATE;
+  state = JSON.parse(localStorage.getItem('todos')) || this.INITIAL_STATE;
 
   static INITIAL_STATE = {
     todos: [],
@@ -31,13 +31,14 @@ export class LifeCycle extends Component {
   addNewTodoItem = event => {
     event.preventDefault();
 
-    let keyData = 0;
-    while (this.state.todos.map(todoItem => todoItem.key).includes(keyData)) {
-      keyData += 1;
+    const todoItemsKeys = this.state.todos.map(todoItem => todoItem.key);
+    let currentKey = 0;
+    while (todoItemsKeys.includes(currentKey)) {
+      currentKey += 1;
     }
 
     this.setState(state => ({
-      todos: [...state.todos, { key: keyData, text: state.filter }],
+      todos: [...state.todos, { key: currentKey, text: state.filter }],
     }));
 
     event.currentTarget.reset();
