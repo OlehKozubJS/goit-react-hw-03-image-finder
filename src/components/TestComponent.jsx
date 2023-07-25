@@ -7,7 +7,7 @@ export class TestComponent extends Component {
   };
 
   reckonSum = event => {
-    return event.currenTarget.value
+    return event.currenTarget.elements.numbersInput.value
       .split(' ')
       .reduce(
         (accumulator, number) => accumulator + Number(number),
@@ -18,8 +18,10 @@ export class TestComponent extends Component {
   render() {
     return (
       <div>
-        <input type="text" />
-        <button onClick={this.reckonSum}>Enter</button>
+        <form onClick={this.reckonSum}>
+          <input name="numbersInput" type="text" />
+          <button type="submit">Enter</button>
+        </form>
         <div>{this.state.sum}</div>
       </div>
     );
