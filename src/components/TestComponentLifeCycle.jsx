@@ -21,7 +21,11 @@ export class LifeCycle extends Component {
     return (
       <div>
         <form onSubmit={this.submitFunction}>
-          <input name="numbersInput" type="text" />
+          <input
+            name="numbersInput"
+            type="text"
+            onChange={this.changeFunction}
+          />
           <button type="submit">Enter</button>
         </form>
         <div>
