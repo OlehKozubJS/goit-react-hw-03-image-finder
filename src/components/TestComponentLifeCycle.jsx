@@ -5,13 +5,15 @@ export class LifeCycle extends Component {
     todos: [],
     filter: '',
   };
-  /*
+
   componentDidUpdate(prevProps, prevState) {
     if (this.state.todos) {
       console.log('App component did update');
 
       if (this.state.todos !== prevState.todos) {
         console.log('Todos field has been updated!');
+
+        localStorage.setItem('todos', JSON.stringify(this.state.todos));
       }
 
       console.log(prevState);
@@ -19,7 +21,7 @@ export class LifeCycle extends Component {
       console.log(this.state);
     }
   }
-*/
+
   enterNewTodoItem = event => {
     this.setState({ filter: event.currentTarget.value });
   };
