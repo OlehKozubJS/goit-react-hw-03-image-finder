@@ -3,7 +3,6 @@ import { Component } from 'react';
 export class LifeCycle extends Component {
   state = {
     todos: [],
-    key: 0,
     filter: '',
   };
 
@@ -28,7 +27,10 @@ export class LifeCycle extends Component {
   addNewTodoItem = event => {
     event.preventDefault();
 
-    this.setState(state => ({ key: state.key + 1 }));
+    let keyData = 0;
+    while (this.state.todos.map(todoItem => todoItem.key).includes(keyData)) {
+      keyData += 1;
+    }
 
     this.setState(state => ({
       todos: [
