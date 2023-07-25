@@ -5,7 +5,7 @@ export class LifeCycle extends Component {
     todos: [],
     filter: '',
   };
-
+  /*
   componentDidUpdate(prevProps, prevState) {
     if (this.state.todos) {
       console.log('App component did update');
@@ -19,7 +19,7 @@ export class LifeCycle extends Component {
       console.log(this.state);
     }
   }
-
+*/
   enterNewTodoItem = event => {
     this.setState({ filter: event.currentTarget.value });
   };
@@ -33,10 +33,7 @@ export class LifeCycle extends Component {
     }
 
     this.setState(state => ({
-      todos: [
-        ...state.todos,
-        { key: `todo-item-${state.key}`, text: state.filter },
-      ],
+      todos: [...state.todos, { key: keyData, text: state.filter }],
     }));
 
     event.currentTarget.reset();
@@ -49,6 +46,8 @@ export class LifeCycle extends Component {
   };
 
   render() {
+    console.log(this.state);
+
     return (
       <div>
         <form onSubmit={this.addNewTodoItem}>
@@ -63,10 +62,7 @@ export class LifeCycle extends Component {
           {this.state.todos.map(todoItem => (
             <div key={todoItem.key}>
               <p>{todoItem.text}</p>
-              <button
-                id={todoItem.key}
-                onClick={event => this.deleteTodoItem(event.currentTarget.id)}
-              >
+              <button onClick={() => this.deleteTodoItem(todoItem.key)}>
                 Delete
               </button>
             </div>
