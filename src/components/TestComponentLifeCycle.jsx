@@ -15,7 +15,7 @@ export class LifeCycle extends Component {
       if (this.state.todos !== prevState.todos) {
         console.log('Todos field has been updated!');
 
-        localStorage.setItem('todos', JSON.stringify(this.state.todos));
+        localStorage.setItem('todos', JSON.stringify(this.state));
       }
 
       console.log(prevState);
