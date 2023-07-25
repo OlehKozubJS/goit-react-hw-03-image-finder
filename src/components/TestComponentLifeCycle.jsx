@@ -1,12 +1,9 @@
 import { Component } from 'react';
 
 export class LifeCycle extends Component {
-    
-    state ={
+  state = {};
 
-    }
-
-    render() {
-        return();
-    }
+  render() {
+    return <div></div>;
+  }
 }
