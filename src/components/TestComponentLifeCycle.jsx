@@ -26,7 +26,10 @@ export class LifeCycle extends Component {
   };
 
   deleteTodoItem = todoIndex => {
-    this.setState(state => ({ todos: state.todos.splice(todoIndex, 1) }));
+    console.log(todoIndex);
+    this.setState(state => ({
+      todos: todoIndex === 0 ? [] : state.todos.splice(todoIndex, 1),
+    }));
   };
 
   render() {
