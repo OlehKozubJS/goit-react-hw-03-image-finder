@@ -14,11 +14,15 @@ export class LifeCycle extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.reckonSum}>
+        <form onSubmit={this.submitFunction}>
           <input name="numbersInput" type="text" />
           <button type="submit">Enter</button>
         </form>
-        <div>{this.state.sum}</div>
+        <div>
+          {this.state.todos.map(todo => (
+            <p>{todo}</p>
+          ))}
+        </div>
       </div>
     );
   }
