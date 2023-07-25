@@ -43,8 +43,6 @@ export class LifeCycle extends Component {
   };
 
   render() {
-    console.log(this.state);
-
     return (
       <div>
         <form onSubmit={this.addNewTodoItem}>
