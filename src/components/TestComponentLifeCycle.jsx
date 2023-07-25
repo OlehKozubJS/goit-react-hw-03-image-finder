@@ -21,11 +21,11 @@ export class LifeCycle extends Component {
     }
   }
 
-  changeFunction = event => {
+  enterNewNotice = event => {
     this.setState({ filter: event.currentTarget.value });
   };
 
-  submitFunction = event => {
+  addNewNotice = event => {
     event.preventDefault();
 
     this.setState(state => ({ key: state.key + 1 }));
@@ -49,11 +49,11 @@ export class LifeCycle extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.submitFunction}>
+        <form onSubmit={this.addNewNotice}>
           <input
             name="numbersInput"
             type="text"
-            onChange={this.changeFunction}
+            onChange={this.enterNewNotice}
           />
           <button type="submit">Enter</button>
         </form>
