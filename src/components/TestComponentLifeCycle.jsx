@@ -19,7 +19,7 @@ export class LifeCycle extends Component {
   submitFunction = event => {
     event.preventDefault();
 
-    this.setState(state => ({ key: (state.key += 1) }));
+    this.setState(state => ({ key: state.key + 1 }));
 
     this.setState(state => ({
       todos: [
