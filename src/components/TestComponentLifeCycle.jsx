@@ -9,10 +9,8 @@ export class LifeCycle extends Component {
   state = JSON.parse(localStorage.getItem('state')) || { ...INITIAL_STATE };
 
   componentDidUpdate(prevState) {
-    if (this.state) {
-      if (this.state !== prevState) {
-        localStorage.setItem('state', JSON.stringify(this.state));
-      }
+    if (this.state && this.state !== prevState) {
+      localStorage.setItem('state', JSON.stringify(this.state));
     }
   }
 
