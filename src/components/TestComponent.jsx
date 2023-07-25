@@ -11,7 +11,7 @@ export class TestComponent extends Component {
     event.preventDefault();
 
     this.setState({
-      sum: event.currenTarget.elements.numbersInput.value
+      sum: event.currentTarget.elements.numbersInput.value
         .split(' ')
         .reduce(
           (accumulator, number) => accumulator + Number(number),
@@ -21,7 +21,7 @@ export class TestComponent extends Component {
 
     this.setState({ currentSum: 0 });
 
-    event.currenTarget.reset();
+    event.currentTarget.reset();
   };
 
   render() {
