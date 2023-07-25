@@ -4,21 +4,30 @@ import propTypes from 'prop-types';
 export class TestComponent extends Component {
   state = {
     sum: 0,
+    currentSum: 0,
   };
 
   reckonSum = event => {
-    return event.currenTarget.elements.numbersInput.value
-      .split(' ')
-      .reduce(
-        (accumulator, number) => accumulator + Number(number),
-        this.state.sum
-      );
+    event.preventDefault();
+
+    this.setState({
+      sum: event.currenTarget.elements.numbersInput.value
+        .split(' ')
+        .reduce(
+          (accumulator, number) => accumulator + Number(number),
+          this.state.currentSum
+        ),
+    });
+
+    this.setState({ currentSum: 0 });
+
+    event.currenTarget.reset();
   };
 
   render() {
     return (
       <div>
-        <form onClick={this.reckonSum}>
+        <form onSubmit={this.reckonSum}>
           <input name="numbersInput" type="text" />
           <button type="submit">Enter</button>
         </form>
