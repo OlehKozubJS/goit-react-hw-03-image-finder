@@ -3,6 +3,7 @@ import { Component } from 'react';
 export class LifeCycle extends Component {
   state = {
     todos: [],
+    key: 0,
     filter: '',
   };
 
@@ -18,8 +19,13 @@ export class LifeCycle extends Component {
   submitFunction = event => {
     event.preventDefault();
 
+    this.setState(state => ({ key: (state.key += 1) }));
+
     this.setState(state => ({
-      todos: [...state.todos, state.filter],
+      todos: [
+        ...state.todos,
+        { id: `todo-item-${state.key}`, text: state.filter },
+      ],
     }));
 
     event.currentTarget.reset();
@@ -46,11 +52,10 @@ export class LifeCycle extends Component {
         <div>
           {this.state.todos.map((todoItem, todoIndex) => (
             <div key={`todo-item-${todoIndex}`}>
-              <p>{todoItem}</p>
+              <p>{todoItem.text}</p>
               <button
-                onClick={event =>
-                  this.deleteTodoItem(event.currentTarget.parentNode.key)
-                }
+                id={`todo-item-${todoIndex}`}
+                onClick={event => this.deleteTodoItem(event.currentTarget.id)}
               >
                 Delete
               </button>
