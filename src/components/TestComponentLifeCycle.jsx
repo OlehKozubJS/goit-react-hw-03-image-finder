@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 };
 
 export class LifeCycle extends Component {
-  state = JSON.parse(localStorage.getItem('state')) || INITIAL_STATE;
+  state = JSON.parse(localStorage.getItem('state')) || { ...INITIAL_STATE };
 
   componentDidUpdate(prevState) {
     if (this.state) {
