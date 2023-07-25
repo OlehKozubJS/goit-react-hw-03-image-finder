@@ -13,7 +13,7 @@ export class LifeCycle extends Component {
 
   submitFunction = event => {
     this.setState(state => ({
-      todos: [...state.todos, sta],
+      todos: [...state.todos, state.filter],
     }));
   };
 
