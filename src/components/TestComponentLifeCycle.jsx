@@ -24,7 +24,7 @@ export class LifeCycle extends Component {
     this.setState(state => ({
       todos: [
         ...state.todos,
-        { id: `todo-item-${state.key}`, text: state.filter },
+        { key: `todo-item-${state.key}`, text: state.filter },
       ],
     }));
 
@@ -51,10 +51,10 @@ export class LifeCycle extends Component {
         </form>
         <div>
           {this.state.todos.map(todoItem => (
-            <div key={`todo-item-${todoItem.key}`}>
+            <div key={todoItem.key}>
               <p>{todoItem.text}</p>
               <button
-                id={`todo-item-${todoItem.key}`}
+                id={todoItem.key}
                 onClick={event => this.deleteTodoItem(event.currentTarget.id)}
               >
                 Delete
