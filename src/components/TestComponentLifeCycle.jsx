@@ -11,7 +11,7 @@ export class LifeCycle extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.state.todos) {
       if (this.state.todos !== prevState.todos) {
-        localStorage.setItem('todos', JSON.stringify(this.state));
+        localStorage.setItem('state', JSON.stringify(this.state));
       }
     }
   }
