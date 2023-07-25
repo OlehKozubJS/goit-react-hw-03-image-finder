@@ -32,7 +32,6 @@ export class LifeCycle extends Component {
   };
 
   deleteTodoItem = key => {
-    console.log(key);
     this.setState(state => ({
       todos: state.todos.filter(todoItem => todoItem.key !== key),
     }));
