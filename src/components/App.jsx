@@ -1,4 +1,5 @@
-import { TestComponent } from './TestComponent';
+//import { TestComponent } from './TestComponent';
+import { LifeCycle } from './TestComponentLifeCycle';
 
 export const App = () => {
   return (
@@ -12,7 +13,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <TestComponent />
+      <LifeCycle />
     </div>
   );
 };
