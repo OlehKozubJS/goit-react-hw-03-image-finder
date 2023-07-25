@@ -1,12 +1,12 @@
 import { Component } from 'react';
 
-export class LifeCycle extends Component {
-  state = JSON.parse(localStorage.getItem('state')) || this.INITIAL_STATE;
+const INITIAL_STATE = {
+  todos: [],
+  filter: '',
+};
 
-  static INITIAL_STATE = {
-    todos: [],
-    filter: '',
-  };
+export class LifeCycle extends Component {
+  state = JSON.parse(localStorage.getItem('state')) || INITIAL_STATE;
 
   componentDidUpdate(prevState) {
     if (this.state) {
