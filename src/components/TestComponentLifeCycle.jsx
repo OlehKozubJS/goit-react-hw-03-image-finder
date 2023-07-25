@@ -37,8 +37,8 @@ export class LifeCycle extends Component {
           <button type="submit">Enter</button>
         </form>
         <div>
-          {this.state.todos.map(todo => (
-            <p>{todo}</p>
+          {this.state.todos.map((todoItem, todoIndex) => (
+            <p key={`todo-item-${todoIndex}`}>{todoItem}</p>
           ))}
         </div>
       </div>
