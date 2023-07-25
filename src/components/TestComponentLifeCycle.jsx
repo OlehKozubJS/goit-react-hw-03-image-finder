@@ -8,9 +8,9 @@ export class LifeCycle extends Component {
     filter: '',
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.todos) {
-      if (this.state.todos !== prevState.todos) {
+  componentDidUpdate(prevState) {
+    if (this.state) {
+      if (this.state !== prevState) {
         localStorage.setItem('state', JSON.stringify(this.state));
       }
     }
