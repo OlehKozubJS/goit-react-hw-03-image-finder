@@ -11,10 +11,18 @@ export class LifeCycle extends Component {
     }
   }
 
+  changeFunction = event => {
+    this.setState({ filter: event.currentTarget.value });
+  };
+
   submitFunction = event => {
+    event.preventDefault();
+
     this.setState(state => ({
       todos: [...state.todos, state.filter],
     }));
+
+    event.currentTarget.reset();
   };
 
   render() {
