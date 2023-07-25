@@ -9,6 +9,15 @@ export class LifeCycle extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.todos) {
+      console.log('App component did update');
+
+      if (this.state.todos !== prevState.todos) {
+        console.log('Todos field has been updated!');
+      }
+
+      console.log(prevState);
+
+      console.log(this.state);
     }
   }
 
