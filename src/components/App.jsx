@@ -1,6 +1,3 @@
-//import { TestComponent } from './TestComponent';
-import { LifeCycle } from './TestComponentLifeCycle';
-
 export const App = () => {
   return (
     <div
