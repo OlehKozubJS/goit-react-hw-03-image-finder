@@ -11,8 +11,6 @@ export const App = () => {
         fontSize: 40,
         color: '#010101',
       }}
-    >
-      <LifeCycle />
-    </div>
+    ></div>
   );
 };
