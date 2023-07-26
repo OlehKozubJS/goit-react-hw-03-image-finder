@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Searchbar } from './Searchbar';
 import { ImageGallery } from './ImageGallery';
+import { Button } from './Button';
 
 export class ImageFinder extends Component {
   render() {
@@ -8,6 +9,7 @@ export class ImageFinder extends Component {
       <div>
         <Searchbar />
         <ImageGallery />
+        <Button />
       </div>
     );
   }
