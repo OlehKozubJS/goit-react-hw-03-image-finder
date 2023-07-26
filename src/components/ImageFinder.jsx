@@ -49,13 +49,11 @@ export class ImageFinder extends Component {
         this.setState({ isError: true, error });
       } finally {
         this.setState({ isLoading: false });
-        console.log(this.state.data);
       }
     }
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <Searchbar submitFunction={this.getSearchResults} />
