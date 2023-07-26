@@ -1,7 +1,7 @@
-export const Button = ({ isLoading }) => {
+export const Button = ({ isLoading, clickFunction }) => {
   return (
     <div className={isLoading ? css.visible : css.hidden}>
-      <button>Load more</button>
+      <button onClick={clickFunction}>Load more</button>
     </div>
   );
 };
