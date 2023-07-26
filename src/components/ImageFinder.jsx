@@ -26,14 +26,12 @@ export class ImageFinder extends Component {
     const response = await axios.get(
       'https://pixabay.com/api/?' + searchParams
     );
-
     return await response.data;
   }
 
   async componentDidUpdate(prevState) {
     if (this.state !== prevState) {
       this.setState({ isLoading: true });
-
       try {
         this.setState({ data: this.fetchImages('cat') });
       } catch (error) {
@@ -47,6 +45,7 @@ export class ImageFinder extends Component {
 
   render() {
     console.log(this.state);
+    console.log(this.fetchImages('cat'));
 
     return (
       <div>
