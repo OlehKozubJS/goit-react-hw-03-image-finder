@@ -34,11 +34,7 @@ export class ImageFinder extends Component {
   render() {
     return (
       <div>
-        {this.state.isLoading ? (
-          <ImageGallery imageGalleryItems={this.state.data} />
-        ) : (
-          <Loader />
-        )}
+        <ImageGallery imageGalleryItems={this.state.data} />
       </div>
     );
   }
@@ -47,4 +43,10 @@ export class ImageFinder extends Component {
  * <Searchbar />
  * <Button />
  * <Modal />
+ * 
+ *         {this.state.isLoading ? (
+          <ImageGallery imageGalleryItems={this.state.data} />
+        ) : (
+          <Loader />
+        )}
  */
