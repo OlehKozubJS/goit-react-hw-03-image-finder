@@ -32,7 +32,7 @@ export class ImageFinder extends Component {
   render() {
     return (
       <div>
-        {isLoading ? (
+        {this.state.isLoading ? (
           <ImageGallery imageGalleryItems={this.state.data} />
         ) : (
           <Loader />
