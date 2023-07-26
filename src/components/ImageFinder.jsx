@@ -5,6 +5,10 @@ import { Button } from './Button';
 import { Loader } from './Loader';
 
 export class ImageFinder extends Component {
+  state = {
+    isLoading: false,
+  };
+
   componentDidUpdate(prevProps, prevState) {
     if (
       this.state.page !== prevState.page ||
