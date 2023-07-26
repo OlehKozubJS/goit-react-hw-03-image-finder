@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { ImageGallery } from './ImageGallery';
 //import { Button } from './Button';
 import { Loader } from './Loader';
+import css from './styles/styles.module.css';
 import axios from 'axios';
 
 export class ImageFinder extends Component {
