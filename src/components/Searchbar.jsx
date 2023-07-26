@@ -1,10 +1,16 @@
 import { Component } from 'react';
 
 export class Searchbar extends Component {
+  enterSearchData = event => {
+    event.preventDefault();
+
+    event.currentTarget.reset();
+  };
+
   render() {
     return (
       <header className="searchbar">
-        <form className="form">
+        <form className="form" onSubmit={this.enterSearchData}>
           <button type="submit" className="button">
             <span className="button-label">Search</span>
           </button>
