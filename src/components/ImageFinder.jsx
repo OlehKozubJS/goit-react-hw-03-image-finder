@@ -30,6 +30,8 @@ export class ImageFinder extends Component {
     return await response.data;
   }
 
+  getSearchResults(searchResult) {}
+
   async componentDidMount(prevState) {
     if (this.state !== prevState) {
       this.setState({ isLoading: true });
@@ -48,7 +50,7 @@ export class ImageFinder extends Component {
   render() {
     return (
       <div>
-        <Searchbar submitFunction={} />
+        <Searchbar submitFunction={this.getSearchResults} />
         {this.state.isLoading ? (
           <Loader />
         ) : (
