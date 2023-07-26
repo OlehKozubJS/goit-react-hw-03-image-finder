@@ -20,6 +20,7 @@ export class ImageFinder extends Component {
         <Searchbar />
         {isLoading ? <ImageGallery /> : <Loader />}
         <Button />
+        <Modal />
       </div>
     );
   }
