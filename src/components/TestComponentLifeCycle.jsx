@@ -1,12 +1,17 @@
 import { Component } from 'react';
 
-const INITIAL_STATE = {
-  todos: [],
-  filter: '',
-};
-
 export class LifeCycle extends Component {
-  state = JSON.parse(localStorage.getItem('state')) || { ...INITIAL_STATE };
+  state = {
+    todos: [],
+    filter: '',
+  };
+
+  componentDidMount() {
+    const parsedState = JSON.parse(localStorage.getItem('state'));
+    if (parsedState) {
+      this.setState({ ...parsedState });
+    }
+  }
 
   componentDidUpdate(prevState) {
     if (this.state && this.state !== prevState) {
