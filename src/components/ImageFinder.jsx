@@ -13,15 +13,24 @@ export class ImageFinder extends Component {
   };
 
   async componentDidUpdate(prevState) {
-    if (this.state && this.state !== prevState) {
+    if (this.state !== prevState) {
       this.setState({ isLoading: true });
 
       try {
+        const searchParams = new URLSearchParams({
+          key: '37447910-ed3fb6b843fd00e4ff71a16f5',
+          q: 'cat',
+          image_type: 'photo',
+          orientation: 'horizontal',
+          safesearch: true,
+          page: 1,
+          per_page: 12,
+        });
         let articles = await axios.get(
-          'https://pixabay.com/api/?q=cat&page=1&key=your_key&image_type=photo&orientation=horizontal&per_page=12'
+          'https://pixabay.com/api/?' + searchParams
         );
         articles = await articles.data;
-        this.setState({ data: articles.filter(article => !!article.title) });
+        this.setState({ data: articles });
       } catch (error) {
         this.setState({ isError: true, error });
       } finally {
