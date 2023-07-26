@@ -8,7 +8,7 @@ import axios from 'axios';
 export class ImageFinder extends Component {
   state = {
     isLoading: false,
-    data: [],
+    data: [123],
     isError: false,
   };
 
@@ -26,8 +26,8 @@ export class ImageFinder extends Component {
         this.setState({ isError: true, error });
       } finally {
         this.setState({ isLoading: false });
+        console.log(this.state.data);
       }
-      console.log(this.state.data);
     }
   }
 
