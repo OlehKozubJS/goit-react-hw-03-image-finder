@@ -10,7 +10,7 @@ export class Searchbar extends Component {
           </button>
 
           <input
-            class="input"
+            className="input"
             type="text"
             autoComplete="off"
             autoFocus
