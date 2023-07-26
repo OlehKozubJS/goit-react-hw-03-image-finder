@@ -2,7 +2,7 @@ import { Component } from 'react';
 //import { Searchbar } from './Searchbar';
 import { ImageGallery } from './ImageGallery';
 //import { Button } from './Button';
-//import { Loader } from './Loader';
+import { Loader } from './Loader';
 import axios from 'axios';
 
 export class ImageFinder extends Component {
@@ -47,7 +47,11 @@ export class ImageFinder extends Component {
   render() {
     return (
       <div>
-        <ImageGallery imageGalleryItems={this.state.data} />
+        {this.state.isLoading ? (
+          <ImageGallery imageGalleryItems={this.state.data} />
+        ) : (
+          <Loader />
+        )}
       </div>
     );
   }
