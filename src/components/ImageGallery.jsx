@@ -5,7 +5,7 @@ export const ImageGallery = ({ imageGalleryItems }) => {
     <ul className="gallery">
       {imageGalleryItems.map(imageGalleryItem => (
         <ImageGalleryItem
-          imageId={imageGalleryItem.id}
+          key={imageGalleryItem.id}
           imageLink={imageGalleryItem.webformatURL}
         />
       ))}
