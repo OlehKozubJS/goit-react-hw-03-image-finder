@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { Searchbar } from './Searchbar';
+//import { Searchbar } from './Searchbar';
 import { ImageGallery } from './ImageGallery';
-import { Button } from './Button';
+//import { Button } from './Button';
 import { Loader } from './Loader';
 import axios from 'axios';
 
@@ -12,7 +12,7 @@ export class ImageFinder extends Component {
     isError: false,
   };
 
-  async componentDidUpdate() {
+  async componentDidUpdate(prevState) {
     if (this.state.searchQuery !== prevState.searchQuery) {
       this.setState({ isLoading: true });
 
