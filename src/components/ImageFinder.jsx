@@ -8,6 +8,7 @@ import axios from 'axios';
 export class ImageFinder extends Component {
   state = {
     isLoading: false,
+    data: [],
   };
 
   async componentDidUpdate() {
@@ -28,7 +29,15 @@ export class ImageFinder extends Component {
   }
 
   render() {
-    return <div>{isLoading ? <ImageGallery /> : <Loader />}</div>;
+    return (
+      <div>
+        {isLoading ? (
+          <ImageGallery imageGalleryItems={this.state.data} />
+        ) : (
+          <Loader />
+        )}
+      </div>
+    );
   }
 }
 /**
