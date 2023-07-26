@@ -33,7 +33,8 @@ export class ImageFinder extends Component {
     if (this.state !== prevState) {
       this.setState({ isLoading: true });
       try {
-        this.setState({ data: [...(await this.fetchImages('cat').hits)] });
+        let imagesData = await this.fetchImages('cat');
+        this.setState({ data: imagesData.hits });
       } catch (error) {
         this.setState({ isError: true, error });
       } finally {
