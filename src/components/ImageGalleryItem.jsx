@@ -1,6 +1,6 @@
 export const ImageGalleryItem = ({ imageLink }) => {
   return (
-    <li class="gallery-item">
+    <li className="gallery-item">
       <img src={imageLink} alt="" />
     </li>
   );
