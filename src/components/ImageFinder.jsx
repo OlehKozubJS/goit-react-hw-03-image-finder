@@ -11,6 +11,7 @@ export class ImageFinder extends Component {
     isLoading: false,
     data: [],
     isError: false,
+    searchResult: '',
   };
 
   async fetchImages(searchResult) {
@@ -30,13 +31,15 @@ export class ImageFinder extends Component {
     return await response.data;
   }
 
-  getSearchResults(searchResult) {}
+  getSearchResults(searchResult) {
+    this.setState({ searchResult: searchResult });
+  }
 
   async componentDidMount(prevState) {
     if (this.state !== prevState) {
       this.setState({ isLoading: true });
       try {
-        let imagesData = await this.fetchImages('cat');
+        let imagesData = await this.fetchImages(this.state.searchResult);
         this.setState({ data: imagesData.hits });
       } catch (error) {
         this.setState({ isError: true, error });
