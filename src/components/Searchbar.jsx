@@ -4,7 +4,7 @@ export class Searchbar extends Component {
   enterSearchData = event => {
     event.preventDefault();
 
-    const searchData = event.currentTarget.elements.search.value;
+    const searchData = event.currentTarget.elements.searchInput.value;
     this.props.submitFunction(searchData);
 
     event.currentTarget.reset();
@@ -20,7 +20,7 @@ export class Searchbar extends Component {
 
           <input
             className="input"
-            name="search"
+            name="searchInput"
             type="text"
             autoComplete="off"
             autoFocus
