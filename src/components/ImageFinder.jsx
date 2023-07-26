@@ -18,6 +18,8 @@ export class ImageFinder extends Component {
         const articles = await axios.get();
       } catch (error) {
         this.setState({ isError: true, error });
+      } finally {
+        this.setState({ isLoading: true });
       }
     }
   }
