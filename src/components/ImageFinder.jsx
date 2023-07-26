@@ -3,13 +3,24 @@ import { Searchbar } from './Searchbar';
 import { ImageGallery } from './ImageGallery';
 import { Button } from './Button';
 import { Loader } from './Loader';
+import axios from 'axios';
 
 export class ImageFinder extends Component {
   state = {
     isLoading: false,
   };
 
-  componentDidUpdate;
+  async componentDidUpdate() {
+    if (this.state.searchQuery !== prevState.searchQuery) {
+      this.setState({ isLoading: true });
+
+      try {
+        const articles = await axios.get();
+      } catch (error) {
+        this.setState({ isError: true, error });
+      }
+    }
+  }
 
   render() {
     return (
