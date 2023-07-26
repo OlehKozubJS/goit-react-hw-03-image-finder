@@ -9,6 +9,7 @@ export class ImageFinder extends Component {
   state = {
     isLoading: false,
     data: [],
+    isError: false,
   };
 
   async componentDidUpdate() {
