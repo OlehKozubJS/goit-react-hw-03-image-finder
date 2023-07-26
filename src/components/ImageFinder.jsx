@@ -31,8 +31,9 @@ export class ImageFinder extends Component {
     return await response.data;
   }
 
-  getSearchResults(searchResult) {
-    this.setState({ searchResult: searchResult });
+  getSearchResults(searchResultData) {
+    this.setState({ searchResult: searchResultData });
+    console.log(searchResultData);
   }
 
   async componentDidUpdate(prevState) {
