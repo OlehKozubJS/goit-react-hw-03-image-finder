@@ -69,13 +69,6 @@ export class ImageFinder extends Component {
   }
 }
 /**
- * <Searchbar />
  * <Button />
  * <Modal />
- * 
- *         {this.state.isLoading ? (
-          <ImageGallery imageGalleryItems={this.state.data} />
-        ) : (
-          <Loader />
-        )}
  */
