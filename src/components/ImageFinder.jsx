@@ -15,7 +15,9 @@ export class ImageFinder extends Component {
       this.setState({ isLoading: true });
 
       try {
-        const articles = await axios.get();
+        const articles = await axios.get(
+          'https://pixabay.com/api/?q=cat&page=1&key=your_key&image_type=photo&orientation=horizontal&per_page=12'
+        );
         this.setState({ data: articles.filter(article => !!article.title) });
       } catch (error) {
         this.setState({ isError: true, error });
