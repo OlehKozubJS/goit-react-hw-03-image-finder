@@ -19,8 +19,8 @@ export class ImageFinder extends Component {
       image_type: 'photo',
       orientation: 'horizontal',
       safesearch: true,
-      page: pageNum,
-      per_page: perPageNum,
+      page: 1,
+      per_page: 12,
     });
 
     const response = await axios.get(
@@ -35,7 +35,7 @@ export class ImageFinder extends Component {
       this.setState({ isLoading: true });
 
       try {
-        this.setState({ data: articles });
+        this.setState({ data: this.fetchImages('cat') });
       } catch (error) {
         this.setState({ isError: true, error });
       } finally {
