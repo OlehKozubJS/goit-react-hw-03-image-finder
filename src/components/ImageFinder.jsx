@@ -45,9 +45,6 @@ export class ImageFinder extends Component {
   }
 
   render() {
-    console.log(this.state);
-    console.log(this.fetchImages('cat'));
-
     return (
       <div>
         <ImageGallery imageGalleryItems={this.state.data} />
