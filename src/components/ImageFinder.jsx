@@ -9,14 +9,7 @@ export class ImageFinder extends Component {
     isLoading: false,
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (
-      this.state.page !== prevState.page ||
-      this.state.query !== prevState.query
-    ) {
-      fetch();
-    }
-  }
+  componentDidUpdate;
 
   render() {
     return (
