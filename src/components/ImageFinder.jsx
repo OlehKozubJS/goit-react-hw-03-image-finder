@@ -12,7 +12,7 @@ export class ImageFinder extends Component {
     data: [],
     isError: false,
     searchResult: '',
-    page,
+    page: 1,
   };
 
   async fetchImages(searchResult) {
@@ -39,7 +39,7 @@ export class ImageFinder extends Component {
 
   async componentDidUpdate(prevState) {
     if (
-      this.state.page !== prevState.page ||
+      this.state.searchResult &&
       this.state.searchResult !== prevState.searchResult
     ) {
       this.setState({ isLoading: true });
@@ -71,3 +71,4 @@ export class ImageFinder extends Component {
  * <Button />
  * <Modal />
  */
+/*this.state.page !== prevState.page ||*/
