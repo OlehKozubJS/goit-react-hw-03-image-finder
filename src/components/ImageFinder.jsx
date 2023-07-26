@@ -26,13 +26,11 @@ export class ImageFinder extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <Searchbar />
-        {isLoading ? <ImageGallery /> : <Loader />}
-        <Button />
-        <Modal />
-      </div>
-    );
+    return <div>{isLoading ? <ImageGallery /> : <Loader />}</div>;
   }
 }
+/**
+ * <Searchbar />
+ * <Button />
+ * <Modal />
+ */
