@@ -13,7 +13,7 @@ export class LifeCycle extends Component {
     }
   }
 
-  componentDidUpdate(prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (this.state && this.state !== prevState) {
       localStorage.setItem('state', JSON.stringify(this.state));
     }
