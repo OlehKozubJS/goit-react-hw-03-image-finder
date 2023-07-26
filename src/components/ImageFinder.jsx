@@ -36,7 +36,7 @@ export class ImageFinder extends Component {
     console.log(searchResultData);
   };
 
-  async componentDidUpdate(prevState) {
+  async componentDidUpdate(prevProps, prevState) {
     if (
       this.state.page !== prevState.page ||
       this.state.query !== prevState.query
