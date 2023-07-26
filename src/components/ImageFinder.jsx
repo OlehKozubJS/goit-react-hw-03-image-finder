@@ -38,8 +38,8 @@ export class ImageFinder extends Component {
 
   async componentDidUpdate(prevProps, prevState) {
     if (
-      this.state.page !== prevState.page ||
-      this.state.query !== prevState.query
+      this.state.searchResultData &&
+      this.state.searchResultData !== prevState.searchResultData
     ) {
       this.setState({ isLoading: true });
       try {
