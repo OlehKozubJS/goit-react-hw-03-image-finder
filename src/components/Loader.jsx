@@ -1,3 +1,5 @@
+import { InfinitySpin } from 'react-loader-spinner';
+
 export const Loader = ({ isLoading }) => {
   return (
     <div className={isLoading ? css.visible : css.hidden}>
