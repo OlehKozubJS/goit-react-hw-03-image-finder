@@ -48,7 +48,7 @@ export class ImageFinder extends Component {
   render() {
     return (
       <div>
-        <Searchbar />
+        <Searchbar submitFunction={} />
         {this.state.isLoading ? (
           <Loader />
         ) : (
