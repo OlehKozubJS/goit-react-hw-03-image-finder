@@ -37,7 +37,10 @@ export class ImageFinder extends Component {
   };
 
   async componentDidUpdate(prevState) {
-    if (this.state !== prevState) {
+    if (
+      this.state.page !== prevState.page ||
+      this.state.query !== prevState.query
+    ) {
       this.setState({ isLoading: true });
       try {
         let imagesData = await this.fetchImages('cats');
@@ -45,7 +48,7 @@ export class ImageFinder extends Component {
       } catch (error) {
         this.setState({ isError: true, error });
       } finally {
-        this.setState({ isLoading: false });
+        //this.setState({ isLoading: false });
         console.log(this.state.data);
       }
     }
