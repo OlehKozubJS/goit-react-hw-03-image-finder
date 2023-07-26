@@ -29,7 +29,7 @@ export class ImageFinder extends Component {
     return await response.data;
   }
 
-  async componentDidMount(prevState) {
+  async componentDidUpdate(prevState) {
     if (this.state !== prevState) {
       this.setState({ isLoading: true });
       try {
