@@ -31,16 +31,16 @@ export class ImageFinder extends Component {
     return await response.data;
   }
 
-  getSearchResults(searchResultData) {
+  getSearchResults = searchResultData => {
     this.setState({ searchResult: searchResultData });
     console.log(searchResultData);
-  }
+  };
 
   async componentDidUpdate(prevState) {
     if (this.state !== prevState) {
       this.setState({ isLoading: true });
       try {
-        let imagesData = await this.fetchImages(this.state.searchResult);
+        let imagesData = await this.fetchImages('cats');
         this.setState({ data: imagesData.hits });
       } catch (error) {
         this.setState({ isError: true, error });
