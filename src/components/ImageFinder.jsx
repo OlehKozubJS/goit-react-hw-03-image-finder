@@ -12,6 +12,7 @@ export class ImageFinder extends Component {
     data: [],
     isError: false,
     searchResult: '',
+    page,
   };
 
   async fetchImages(searchResult) {
