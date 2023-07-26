@@ -29,7 +29,7 @@ export class ImageFinder extends Component {
     return await response.data;
   }
 
-  async componentDidUpdate(prevState) {
+  async componentDidMount(prevState) {
     if (this.state !== prevState) {
       this.setState({ isLoading: true });
       try {
@@ -48,9 +48,9 @@ export class ImageFinder extends Component {
     return (
       <div>
         {this.state.isLoading ? (
-          <ImageGallery imageGalleryItems={this.state.data} />
-        ) : (
           <Loader />
+        ) : (
+          <ImageGallery imageGalleryItems={this.state.data} />
         )}
       </div>
     );
