@@ -16,7 +16,7 @@ export class ImageFinder extends Component {
 
       try {
         const articles = await axios.get();
-        this.setState({ data: articles.filter(article => article.title) });
+        this.setState({ data: articles.filter(article => !!article.title) });
       } catch (error) {
         this.setState({ isError: true, error });
       } finally {
