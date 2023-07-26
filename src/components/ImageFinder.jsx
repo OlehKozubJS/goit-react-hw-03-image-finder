@@ -2,7 +2,7 @@ import { Component } from 'react';
 //import { Searchbar } from './Searchbar';
 import { ImageGallery } from './ImageGallery';
 //import { Button } from './Button';
-import { Loader } from './Loader';
+//import { Loader } from './Loader';
 import axios from 'axios';
 
 export class ImageFinder extends Component {
@@ -13,7 +13,7 @@ export class ImageFinder extends Component {
   };
 
   async componentDidUpdate(prevState) {
-    if (this.state.searchQuery !== prevState.searchQuery) {
+    if (this.state && this.state !== prevState) {
       this.setState({ isLoading: true });
 
       try {
@@ -32,6 +32,8 @@ export class ImageFinder extends Component {
   }
 
   render() {
+    console.log(this.state);
+
     return (
       <div>
         <ImageGallery imageGalleryItems={this.state.data} />
