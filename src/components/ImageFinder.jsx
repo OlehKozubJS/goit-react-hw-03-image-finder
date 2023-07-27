@@ -8,7 +8,7 @@ import { fetchImages } from './js/fetchImages';
 
 export class ImageFinder extends Component {
   state = {
-    hasJustEntered: false,
+    hasJustEntered: true,
     images: [],
     isLoading: false,
     isError: false,
