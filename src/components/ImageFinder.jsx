@@ -56,7 +56,7 @@ export class ImageFinder extends Component {
       } catch (error) {
         this.setState({ isError: true, error });
       } finally {
-        //this.setState({ isLoading: false });
+        this.setState({ isLoading: false });
       }
     }
   }
