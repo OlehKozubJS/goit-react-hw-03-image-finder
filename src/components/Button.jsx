@@ -9,6 +9,7 @@ export const Button = ({ isLoadMore, clickFunction }) => {
       <button onClick={clickFunction} className={ButtonCSS.Button}>
         Load more
       </button>
+      <div>We're sorry, but you've reached the end of search results.</div>
     </div>
   );
 };
