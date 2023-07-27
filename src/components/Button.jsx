@@ -1,8 +1,13 @@
 import ButtonCSS from './styles/Button.module.css';
+import ImageFinderCSS from './styles/ImageFinder.module.css';
 
-export const Button = ({ isLoadMore, clickFunction }) => {
+export const Button = ({ hasJustEntered, isLoadMore, clickFunction }) => {
   return (
-    <div className={ButtonCSS.ButtonContainer}>
+    <div
+      className={`${ButtonCSS.ButtonContainer} ${
+        hasJustEntered ? ImageFinderCSS.visible : ImageFinderCSS.hidden
+      }`}
+    >
       {isLoadMore ? (
         <button onClick={clickFunction} className={ButtonCSS.Button}>
           Load more
