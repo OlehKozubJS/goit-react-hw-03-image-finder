@@ -13,7 +13,7 @@ export class ImageFinder extends Component {
     isError: false,
     searchResult: '',
     page: 1,
-    totaHits: 0,
+    totalHits: 0,
     isModal: false,
     modalImageLink: '',
   };
@@ -38,7 +38,10 @@ export class ImageFinder extends Component {
       this.setState({ isLoading: true });
       try {
         let imagesData = await fetchImages(this.state.searchResult);
-        this.setState({ data: imagesData.hits });
+        this.setState({
+          data: imagesData.hits,
+          totalHits: imagesData.totalHits,
+        });
       } catch (error) {
         this.setState({ isError: true, error });
       } finally {
