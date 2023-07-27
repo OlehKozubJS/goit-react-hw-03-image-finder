@@ -34,7 +34,9 @@
 }
 
 .SearchFormButton {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 48px;
   height: 48px;
   border: 0;
@@ -48,11 +50,12 @@
 }
 
 .icon {
-  display: inline-block;
-  width: 3em;
-  height: 3em;
+  display: block;
+  margin: 0;
+  width: 36px;
+  height: 36px;
   stroke-width: 0;
-  stroke: currentColor;
+  stroke: none;
   fill: grey;
 }
 
