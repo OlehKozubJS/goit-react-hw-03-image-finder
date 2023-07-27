@@ -8,7 +8,7 @@ export const Modal = ({ isModal, clickFunction, imageLink }) => {
       class={ModalCSS.Overlay}
     >
       <div class={ModalCSS.Modal}>
-        <img src={imageLink} alt="Image" />
+        <img src={imageLink} alt="" />
       </div>
     </div>
   );
