@@ -32,3 +32,7 @@
 .Button:focus {
   background-color: #303f9f;
 }
+
+.NoMoreMessage {
+  width: 50%;
+}
