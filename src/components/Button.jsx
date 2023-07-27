@@ -3,13 +3,14 @@ import ButtonCSS from './styles/Button.module.css';
 
 export const Button = ({ isLoadMore, clickFunction }) => {
   return (
-    <div
-      className={isLoadMore ? ImageFinderCSS.visible : ImageFinderCSS.hidden}
-    >
-      <button onClick={clickFunction} className={ButtonCSS.Button}>
-        Load more
-      </button>
-      <div>We're sorry, but you've reached the end of search results.</div>
+    <div>
+      {isLoadMore ? (
+        <button onClick={clickFunction} className={ButtonCSS.Button}>
+          Load more
+        </button>
+      ) : (
+        <div>We're sorry, but you've reached the end of search results.</div>
+      )}
     </div>
   );
 };
