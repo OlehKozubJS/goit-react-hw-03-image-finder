@@ -52,6 +52,7 @@ export class ImageFinder extends Component {
   render() {
     return (
       <div>
+        {isModal && <Modal />}
         <Searchbar submitFunction={this.getSearchResults} />
         {this.state.isLoading ? (
           <Loader />
