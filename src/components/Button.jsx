@@ -1,11 +1,10 @@
 import ButtonCSS from './styles/Button.module.css';
-import ImageFinderCSS from './styles/ImageFinder.module.css';
 
 export const Button = ({ hasJustEntered, isLoadMore, clickFunction }) => {
   return (
     <div
       className={`${ButtonCSS.ButtonContainer} ${
-        hasJustEntered ? ImageFinderCSS.hidden : ImageFinderCSS.visible
+        hasJustEntered ? ButtonCSS.hidden : ButtonCSS.visible
       }`}
     >
       {isLoadMore ? (
@@ -13,7 +12,7 @@ export const Button = ({ hasJustEntered, isLoadMore, clickFunction }) => {
           Load more
         </button>
       ) : (
-        <div className={ImageFinderCSS.NoMoreMessage}>
+        <div className={ButtonCSS.NoMoreMessage}>
           We're sorry, but you've reached the end of search results.
         </div>
       )}
