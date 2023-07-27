@@ -35,11 +35,3 @@ img {
   grid-gap: 16px;
   padding-bottom: 24px;
 }
-
-.visible {
-  display: block;
-}
-
-.hidden {
-  display: none;
-}
