@@ -1,11 +1,13 @@
+import ModalCSS from './styles/Modal.module.css';
+
 export const Modal = ({ isModal, clickFunction, imageLink }) => {
   return (
     <div
       /*className={isModal ? css.visible : css.hidden}*/
       onClick={clickFunction}
-      class="overlay"
+      class={ModalCSS.Overlay}
     >
-      <div class="modal">
+      <div class={ModalCSS.Modal}>
         <img src={imageLink} alt="Image" />
       </div>
     </div>
