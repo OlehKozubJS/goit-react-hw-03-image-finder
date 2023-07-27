@@ -20,7 +20,7 @@ export class ImageFinder extends Component {
   };
 
   getSearchResults = searchResultData => {
-    this.setState({ searchResult: searchResultData, page: 1 });
+    this.setState({ searchResult: searchResultData, images: [], page: 1 });
   };
 
   componentDidMount() {
@@ -91,7 +91,7 @@ export class ImageFinder extends Component {
           <Loader />
         ) : (
           <ImageGallery
-            imageGalleryItems={this.state.data}
+            imageGalleryItems={this.state.images}
             itemClickFunction={this.openModal}
           />
         )}
