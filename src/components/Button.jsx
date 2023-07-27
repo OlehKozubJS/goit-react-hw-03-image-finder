@@ -1,4 +1,3 @@
-import ImageFinderCSS from './styles/ImageFinder.module.css';
 import ButtonCSS from './styles/Button.module.css';
 
 export const Button = ({ isLoadMore, clickFunction }) => {
