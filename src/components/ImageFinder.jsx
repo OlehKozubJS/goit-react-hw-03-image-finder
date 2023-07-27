@@ -36,6 +36,10 @@ export class ImageFinder extends Component {
     }
   }
 
+  openModal = () => {
+    this.setState({ isModal: false });
+  };
+
   closeModal = event => {
     if (
       event.type === 'click' ||
