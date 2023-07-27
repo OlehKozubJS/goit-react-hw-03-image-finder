@@ -18,9 +18,9 @@ export class Searchbar extends Component {
           className={SearchbarCSS.SearchForm}
           onSubmit={this.enterSearchData}
         >
-          <button type="submit" className={SearchbarCSS.menu}>
+          <button type="submit" className={SearchbarCSS.icon}>
             <svg>
-              <use href="./images/icons.svg#menu-icon"></use>
+              <use href="./images/icons.svg#icon-search"></use>
             </svg>
           </button>
 
