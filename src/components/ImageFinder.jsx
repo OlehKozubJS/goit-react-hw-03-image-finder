@@ -3,7 +3,6 @@ import { Searchbar } from './Searchbar';
 import { ImageGallery } from './ImageGallery';
 //import { Button } from './Button';
 import { Loader } from './Loader';
-import css from './styles/styles.module.css';
 import { fetchImages } from './js/fetchImages';
 
 export class ImageFinder extends Component {
