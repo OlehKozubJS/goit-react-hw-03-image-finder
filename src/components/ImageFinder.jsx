@@ -20,7 +20,7 @@ export class ImageFinder extends Component {
   };
 
   getSearchResults = searchResultData => {
-    this.setState({ searchResult: searchResultData });
+    this.setState({ searchResult: searchResultData, page: 1 });
   };
 
   componentDidMount() {
