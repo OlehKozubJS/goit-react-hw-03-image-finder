@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import SearchbarCSS from './styles/Searchbar.module.css';
 
 export class Searchbar extends Component {
   enterSearchData = event => {
