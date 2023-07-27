@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import SearchbarCSS from './styles/Searchbar.module.css';
+import Icons from './images/icons.svg';
 
 export class Searchbar extends Component {
   enterSearchData = event => {
@@ -20,7 +21,7 @@ export class Searchbar extends Component {
         >
           <button type="submit" className={SearchbarCSS.icon}>
             <svg>
-              <use xlinkHref="./images/icons.svg#icon-search"></use>
+              <use xlinkHref={`${Icons}#icon-search`}></use>
             </svg>
           </button>
 
