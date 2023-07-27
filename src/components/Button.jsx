@@ -2,7 +2,7 @@ import ButtonCSS from './styles/Button.module.css';
 
 export const Button = ({ isLoadMore, clickFunction }) => {
   return (
-    <div>
+    <div className={ButtonCSS.ButtonContainer}>
       {isLoadMore ? (
         <button onClick={clickFunction} className={ButtonCSS.Button}>
           Load more
