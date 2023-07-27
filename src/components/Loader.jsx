@@ -1,4 +1,4 @@
-import { InfinitySpin } from 'react-loader-spinner';
+import { Watch } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
@@ -7,9 +7,19 @@ export const Loader = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        marginInline: 0,
       }}
     >
-      <InfinitySpin width="300" color="#3f51b5" />
+      <Watch
+        height="80"
+        width="80"
+        radius="48"
+        color="#3f51b5"
+        ariaLabel="watch-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
+      />
     </div>
   );
 };
