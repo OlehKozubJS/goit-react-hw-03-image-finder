@@ -38,7 +38,10 @@ export class ImageFinder extends Component {
     ) {
       this.setState({ isLoading: true });
       try {
-        let imagesData = await fetchImages(this.state.searchResult);
+        let imagesData = await fetchImages(
+          this.state.searchResult,
+          this.state.page
+        );
         this.setState(prev => ({
           images: [...prev.images, ...imagesData.hits],
           isLoadMore: prev.page < Math.ceil(imagesData.totalHits / 12),
