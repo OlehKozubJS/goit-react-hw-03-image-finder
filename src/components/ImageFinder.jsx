@@ -13,6 +13,7 @@ export class ImageFinder extends Component {
     isError: false,
     searchResult: '',
     page: 1,
+    totaHits: 0,
     isModal: false,
     modalImageLink: '',
   };
@@ -89,5 +90,9 @@ export class ImageFinder extends Component {
 /**
  * <Button />
  * <Modal />
+ * 
+ * this.setState(prev =>({
+ images: [...prev.images, ...hits],
+ isLoadMore: this.state.page < Math.ceil(totalHits / 12 )
+}))
  */
-/*this.state.page !== prevState.page ||*/
