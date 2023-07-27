@@ -58,7 +58,10 @@ export class ImageFinder extends Component {
         {this.state.isLoading ? (
           <Loader />
         ) : (
-          <ImageGallery imageGalleryItems={this.state.data} />
+          <ImageGallery
+            imageGalleryItems={this.state.data}
+            itemClickFunction={this.openModal}
+          />
         )}
       </div>
     );
