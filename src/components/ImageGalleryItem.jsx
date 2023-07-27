@@ -1,8 +1,11 @@
 import ImageGalleryItemCSS from './styles/ImageGalleryItem.module.css';
 
-export const ImageGalleryItem = ({ imageLink }) => {
+export const ImageGalleryItem = ({ imageLink, clickFunction }) => {
   return (
-    <li className={ImageGalleryItemCSS.ImageGalleryItem}>
+    <li
+      className={ImageGalleryItemCSS.ImageGalleryItem}
+      onClick={() => clickFunction(imageLink)}
+    >
       <img
         src={imageLink}
         alt=""
