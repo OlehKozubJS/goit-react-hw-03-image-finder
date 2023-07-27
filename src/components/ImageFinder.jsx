@@ -1,19 +1,20 @@
 import { Component } from 'react';
 import { Searchbar } from './Searchbar';
 import { ImageGallery } from './ImageGallery';
-//import { Button } from './Button';
+import { Button } from './Button';
 import { Loader } from './Loader';
 import { Modal } from './Modal';
 import { fetchImages } from './js/fetchImages';
 
 export class ImageFinder extends Component {
   state = {
-    data: [],
+    images: [],
     isLoading: false,
     isError: false,
     searchResult: '',
     page: 1,
     totalHits: 0,
+    isLoadMore: false,
     isModal: false,
     modalImageLink: '',
   };
@@ -38,10 +39,11 @@ export class ImageFinder extends Component {
       this.setState({ isLoading: true });
       try {
         let imagesData = await fetchImages(this.state.searchResult);
-        this.setState({
-          data: imagesData.hits,
+        this.setState(prev => ({
+          images: [...prev.images, ...imagesData.hits],
+          isLoadMore: prev.page < Math.ceil(imagesData.totalHits / 12),
           totalHits: imagesData.totalHits,
-        });
+        }));
       } catch (error) {
         this.setState({ isError: true, error });
       } finally {
@@ -53,7 +55,7 @@ export class ImageFinder extends Component {
   openModal = imageLink => {
     this.setState({
       isModal: true,
-      modalImageLink: this.state.data.find(
+      modalImageLink: this.state.images.find(
         dataItem => dataItem.webformatURL === imageLink
       ).largeImageURL,
     });
@@ -67,6 +69,8 @@ export class ImageFinder extends Component {
       this.setState({ isModal: false });
     }
   };
+
+  loadMoreFunction = () => {};
 
   render() {
     return (
@@ -86,6 +90,10 @@ export class ImageFinder extends Component {
             itemClickFunction={this.openModal}
           />
         )}
+        <Button
+          isLoadMore={this.state.isLoadMore}
+          clickFunction={this.loadMoreFunction}
+        />
       </div>
     );
   }
