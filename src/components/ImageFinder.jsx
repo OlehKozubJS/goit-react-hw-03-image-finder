@@ -15,26 +15,8 @@ export class ImageFinder extends Component {
     page: 1,
   };
 
-  async fetchImages(searchResult) {
-    const searchParams = new URLSearchParams({
-      key: '37447910-ed3fb6b843fd00e4ff71a16f5',
-      q: searchResult,
-      image_type: 'photo',
-      orientation: 'horizontal',
-      safesearch: true,
-      page: 1,
-      per_page: 12,
-    });
-
-    const response = await axios.get(
-      'https://pixabay.com/api/?' + searchParams
-    );
-    return await response.data;
-  }
-
   getSearchResults = searchResultData => {
     this.setState({ searchResult: searchResultData });
-    console.log(searchResultData);
   };
 
   async componentDidUpdate(prevProps, prevState) {
