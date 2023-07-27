@@ -5,7 +5,7 @@ export const Button = ({ hasJustEntered, isLoadMore, clickFunction }) => {
   return (
     <div
       className={`${ButtonCSS.ButtonContainer} ${
-        hasJustEntered ? ImageFinderCSS.visible : ImageFinderCSS.hidden
+        hasJustEntered ? ImageFinderCSS.hidden : ImageFinderCSS.visible
       }`}
     >
       {isLoadMore ? (
