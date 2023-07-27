@@ -5,6 +5,7 @@ import { ImageGallery } from './ImageGallery';
 import { Loader } from './Loader';
 import { Modal } from './Modal';
 import { fetchImages } from './js/fetchImages';
+import { useEffect } from 'react';
 
 export class ImageFinder extends Component {
   state = {
@@ -48,12 +49,13 @@ export class ImageFinder extends Component {
       (event.type === 'keydown' && event.key === 'Escape')
     ) {
       this.setState({ isModal: false });
+      console.log('closed');
     }
   };
 
   render() {
     return (
-      <div onKeyDown={this.closeModal}>
+      <div>
         {this.state.isModal && (
           <Modal
             clickFunction={this.closeModal}
