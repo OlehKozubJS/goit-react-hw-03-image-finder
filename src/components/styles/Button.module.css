@@ -1,6 +1,14 @@
 /*
 * Стили компонента Button (Load more)
 */
+.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
 .ButtonContainer {
   justify-content: center;
   align-items: center;
