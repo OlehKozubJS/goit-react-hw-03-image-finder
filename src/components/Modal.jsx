@@ -5,9 +5,9 @@ export const Modal = ({ clickFunction, imageLink }) => {
     <div
       /*className={isModal ? css.visible : css.hidden}*/
       onClick={clickFunction}
-      class={ModalCSS.Overlay}
+      clasNames={ModalCSS.Overlay}
     >
-      <div class={ModalCSS.Modal}>
+      <div className={ModalCSS.Modal}>
         <img src={imageLink} alt="" />
       </div>
     </div>
