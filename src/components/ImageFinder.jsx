@@ -45,7 +45,7 @@ export class ImageFinder extends Component {
   closeModal = event => {
     if (
       event.type === 'click' ||
-      (event.type === 'keydown' && event.key === 'Escape')
+      (event.type === 'keydown' && event.key === 'a')
     ) {
       this.setState({ isModal: false });
     }
@@ -53,8 +53,13 @@ export class ImageFinder extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.isModal && <Modal clickFunction={this.closeModal} />}
+      <div onKeyDown={this.closeModal}>
+        {this.state.isModal && (
+          <Modal
+            clickFunction={this.closeModal}
+            imageLink={this.state.modalImageLink}
+          />
+        )}
         <Searchbar submitFunction={this.getSearchResults} />
         {this.state.isLoading ? (
           <Loader />
