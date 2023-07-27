@@ -5,7 +5,6 @@ import { ImageGallery } from './ImageGallery';
 import { Loader } from './Loader';
 import { Modal } from './Modal';
 import { fetchImages } from './js/fetchImages';
-import { useEffect } from 'react';
 
 export class ImageFinder extends Component {
   state = {
@@ -40,7 +39,12 @@ export class ImageFinder extends Component {
   }
 
   openModal = imageLink => {
-    this.setState({ isModal: true, modalImageLink: imageLink });
+    this.setState({
+      isModal: true,
+      modalImageLink: this.state.data.find(
+        dataItem => dataItem.webformatURL === imageLink
+      ).largeImageURL,
+    });
   };
 
   closeModal = event => {
