@@ -14,6 +14,7 @@ export class ImageFinder extends Component {
     searchResult: '',
     page: 1,
     isModal: false,
+    modalImageLink: '',
   };
 
   getSearchResults = searchResultData => {
@@ -37,8 +38,8 @@ export class ImageFinder extends Component {
     }
   }
 
-  openModal = () => {
-    this.setState({ isModal: false });
+  openModal = imageLink => {
+    this.setState({ isModal: true, modalImageLink: imageLink });
   };
 
   closeModal = event => {
