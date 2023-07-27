@@ -62,7 +62,7 @@ export class ImageFinder extends Component {
       <div>
         {this.state.isModal && (
           <Modal
-            onKeyDown={this.kdFun}
+            keyDownFunction={this.kdFun}
             clickFunction={this.closeModal}
             imageLink={this.state.modalImageLink}
           />
