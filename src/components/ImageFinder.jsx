@@ -8,8 +8,8 @@ import axios from 'axios';
 
 export class ImageFinder extends Component {
   state = {
-    isLoading: false,
     data: [],
+    isLoading: false,
     isError: false,
     searchResult: '',
     page: 1,
