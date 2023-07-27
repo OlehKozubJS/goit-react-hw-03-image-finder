@@ -23,8 +23,8 @@ export class Searchbar extends Component {
           </button>
 
           <input
-            className="input"
-            name={SearchbarCSS.SearchFormInput}
+            className={SearchbarCSS.SearchFormInput}
+            name="searchInput"
             type="text"
             autoComplete="off"
             autoFocus
