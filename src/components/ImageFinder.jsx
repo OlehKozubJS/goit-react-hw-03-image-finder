@@ -73,7 +73,9 @@ export class ImageFinder extends Component {
     }
   };
 
-  loadMoreFunction = () => {};
+  loadMoreFunction = () => {
+    this.setState(state => ({ page: state.page + 1 }));
+  };
 
   render() {
     return (
