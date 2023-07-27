@@ -3,6 +3,7 @@ import { Searchbar } from './Searchbar';
 import { ImageGallery } from './ImageGallery';
 //import { Button } from './Button';
 import { Loader } from './Loader';
+import { Modal } from './Modal';
 import { fetchImages } from './js/fetchImages';
 
 export class ImageFinder extends Component {
@@ -52,7 +53,7 @@ export class ImageFinder extends Component {
   render() {
     return (
       <div>
-        {isModal && <Modal />}
+        {this.state.isModal && <Modal />}
         <Searchbar submitFunction={this.getSearchResults} />
         {this.state.isLoading ? (
           <Loader />
