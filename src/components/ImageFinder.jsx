@@ -61,7 +61,6 @@ export class ImageFinder extends Component {
       (event.type === 'keydown' && event.key === 'Escape')
     ) {
       this.setState({ isModal: false });
-      console.log('closed');
     }
   };
 
