@@ -20,7 +20,7 @@ export class Searchbar extends Component {
         >
           <button type="submit" className={SearchbarCSS.icon}>
             <svg>
-              <use href="./images/icons.svg#icon-search"></use>
+              <use xlinkHref="./images/icons.svg#icon-search"></use>
             </svg>
           </button>
 
