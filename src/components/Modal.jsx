@@ -1,6 +1,6 @@
 import ModalCSS from './styles/Modal.module.css';
 
-export const Modal = ({ isModal, clickFunction, imageLink }) => {
+export const Modal = ({ clickFunction, imageLink }) => {
   return (
     <div
       /*className={isModal ? css.visible : css.hidden}*/
