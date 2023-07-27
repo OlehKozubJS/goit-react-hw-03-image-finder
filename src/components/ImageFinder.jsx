@@ -21,6 +21,14 @@ export class ImageFinder extends Component {
     this.setState({ searchResult: searchResultData });
   };
 
+  componentDidMount() {
+    document.addEventListener('keydown', this.closeModal.bind(this));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.closeModal.bind(this));
+  }
+
   async componentDidUpdate(prevProps, prevState) {
     if (
       this.state.page !== prevState.page ||
@@ -57,16 +65,11 @@ export class ImageFinder extends Component {
     }
   };
 
-  kdFun = event => {
-    console.log(event.key);
-  };
-
   render() {
     return (
       <div>
         {this.state.isModal && (
           <Modal
-            keyDownFunction={this.kdFun}
             clickFunction={this.closeModal}
             imageLink={this.state.modalImageLink}
           />
