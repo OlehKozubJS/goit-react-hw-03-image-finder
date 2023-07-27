@@ -2,7 +2,6 @@
 * Стили компонента Button (Load more)
 */
 .ButtonContainer {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
