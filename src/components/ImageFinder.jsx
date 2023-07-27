@@ -8,6 +8,7 @@ import { fetchImages } from './js/fetchImages';
 
 export class ImageFinder extends Component {
   state = {
+    hasJustEntered: false,
     images: [],
     isLoading: false,
     isError: false,
@@ -96,6 +97,7 @@ export class ImageFinder extends Component {
           />
         )}
         <Button
+          hasJustEntered={this.state.hasJustEntered}
           isLoadMore={this.state.isLoadMore}
           clickFunction={this.loadMoreFunction}
         />
