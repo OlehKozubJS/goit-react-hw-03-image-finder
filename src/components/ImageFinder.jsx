@@ -93,12 +93,3 @@ export class ImageFinder extends Component {
     );
   }
 }
-/**
- * <Button />
- * <Modal />
- * 
- * this.setState(prev =>({
- images: [...prev.images, ...hits],
- isLoadMore: this.state.page < Math.ceil(totalHits / 12 )
-}))
- */
