@@ -2,22 +2,21 @@ import { Component } from 'react';
 import ModalCSS from './styles/Modal.module.css';
 
 export class Modal extends Component {
-  state = {
-    isModal: true,
-  };
-
   componentDidMount() {
-    document.addEventListener('keydown', this.closeModal.bind(this));
+    document.addEventListener('keydown', this.props.clickFunction.bind(this));
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.closeModal.bind(this));
+    document.removeEventListener(
+      'keydown',
+      this.props.clickFunction.bind(this)
+    );
   }
 
   render() {
     return (
       this.state.isModal && (
-        <div onClick={this.closeModal} className={ModalCSS.Overlay}>
+        <div onClick={this.props.clickFunction} className={ModalCSS.Overlay}>
           <div className={ModalCSS.Modal}>
             <img src={this.props.imageLink} alt="" />
           </div>
