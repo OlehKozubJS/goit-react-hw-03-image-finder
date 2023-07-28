@@ -10,7 +10,7 @@ export const Button = ({ clickFunction }) => {
   );
 };
 /**
- *         <div className={ButtonCSS.NoMoreMessage}>
+        {this.state.isLoadMore && ( <div className={ButtonCSS.NoMoreMessage}>
           We're sorry, but you've reached the end of search results.
-        </div>
+        </div>)}
  */
