@@ -73,7 +73,7 @@ export class App extends Component {
       <div className={ImageFinderCSS.App}>
         {this.state.isModal && (
           <Modal
-            clickFunction={this.closeModal}
+            eventFunction={this.closeModal}
             imageLink={this.state.modalImageLink}
           />
         )}
