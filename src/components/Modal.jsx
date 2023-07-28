@@ -15,13 +15,11 @@ export class Modal extends Component {
 
   render() {
     return (
-      this.state.isModal && (
-        <div onClick={this.props.clickFunction} className={ModalCSS.Overlay}>
-          <div className={ModalCSS.Modal}>
-            <img src={this.props.imageLink} alt="" />
-          </div>
+      <div onClick={this.props.clickFunction} className={ModalCSS.Overlay}>
+        <div className={ModalCSS.Modal}>
+          <img src={this.props.imageLink} alt="" />
         </div>
-      )
+      </div>
     );
   }
 }
