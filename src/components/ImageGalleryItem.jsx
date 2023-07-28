@@ -1,4 +1,5 @@
 import ImageGalleryItemCSS from './styles/ImageGalleryItem.module.css';
+import propTypes from 'prop-types';
 
 export const ImageGalleryItem = ({
   largeImageLink,
@@ -17,4 +18,10 @@ export const ImageGalleryItem = ({
       />
     </li>
   );
+};
+
+ImageGalleryItem.propTypes = {
+  largeImageLink: propTypes.string.isRequired,
+  imageLink: propTypes.string.isRequired,
+  clickFunction: propTypes.func.isRequired,
 };
