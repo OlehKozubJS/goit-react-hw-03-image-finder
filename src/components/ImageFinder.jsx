@@ -88,11 +88,7 @@ export class ImageFinder extends Component {
           imageGalleryItems={this.state.images}
           itemClickFunction={this.openModal}
         />
-        <Button
-          hasJustEntered={this.state.hasJustEntered}
-          isLoadMore={this.state.isLoadMore}
-          clickFunction={this.loadMoreFunction}
-        />
+        <Button clickFunction={this.loadMoreFunction} />
         {!this.state.isLoadMore && (
           <div className={ButtonCSS.NoMoreMessage}>
             We're sorry, but you've reached the end of search results.
