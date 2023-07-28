@@ -19,7 +19,7 @@ export class Modal extends Component {
       event.type === 'click' ||
       (event.type === 'keydown' && event.key === 'Escape')
     ) {
-      this.props.eventFunction;
+      this.props.eventFunction();
     }
   };
 
