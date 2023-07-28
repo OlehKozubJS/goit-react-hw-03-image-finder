@@ -61,13 +61,8 @@ export class App extends Component {
     });
   };
 
-  closeModal = event => {
-    if (
-      event.type === 'click' ||
-      (event.type === 'keydown' && event.key === 'Escape')
-    ) {
-      this.setState({ isModal: false });
-    }
+  closeModal = () => {
+    this.setState({ isModal: false });
   };
 
   loadMoreFunction = () => {
