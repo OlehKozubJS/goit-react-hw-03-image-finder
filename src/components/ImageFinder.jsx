@@ -29,14 +29,6 @@ export class ImageFinder extends Component {
     });
   };
 
-  componentDidMount() {
-    document.addEventListener('keydown', this.closeModal.bind(this));
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.closeModal.bind(this));
-  }
-
   async componentDidUpdate(prevProps, prevState) {
     if (
       this.state.page !== prevState.page ||
@@ -68,15 +60,6 @@ export class ImageFinder extends Component {
         dataItem => dataItem.webformatURL === imageLink
       ).largeImageURL,
     });
-  };
-
-  closeModal = event => {
-    if (
-      event.type === 'click' ||
-      (event.type === 'keydown' && event.key === 'Escape')
-    ) {
-      this.setState({ isModal: false });
-    }
   };
 
   loadMoreFunction = () => {
