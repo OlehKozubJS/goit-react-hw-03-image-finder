@@ -25,11 +25,13 @@ export class Modal extends Component {
 
   render() {
     return (
-      <div onClick={this.closeModal} className={ModalCSS.Overlay}>
-        <div className={ModalCSS.Modal}>
-          <img src={this.props.imageLink} alt="" />
+      this.state.isModal && (
+        <div onClick={this.closeModal} className={ModalCSS.Overlay}>
+          <div className={ModalCSS.Modal}>
+            <img src={this.props.imageLink} alt="" />
+          </div>
         </div>
-      </div>
+      )
     );
   }
 }
