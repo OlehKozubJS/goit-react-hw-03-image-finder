@@ -9,7 +9,6 @@ import ImageFinderCSS from './styles/ImageFinder.module.css';
 
 export class App extends Component {
   state = {
-    hasJustEntered: true,
     images: [],
     isLoading: false,
     isError: false,
