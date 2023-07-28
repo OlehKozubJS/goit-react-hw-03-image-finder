@@ -2,6 +2,10 @@ import { Component } from 'react';
 import ModalCSS from './styles/Modal.module.css';
 
 export class Modal extends Component {
+  state = {
+    isModal: true,
+  };
+
   componentDidMount() {
     document.addEventListener('keydown', this.closeModal.bind(this));
   }
