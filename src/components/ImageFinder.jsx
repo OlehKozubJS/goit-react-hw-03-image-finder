@@ -53,12 +53,10 @@ export class ImageFinder extends Component {
     }
   }
 
-  openModal = imageLink => {
+  openModal = largeImageLink => {
     this.setState({
       isModal: true,
-      modalImageLink: this.state.images.find(
-        dataItem => dataItem.webformatURL === imageLink
-      ).largeImageURL,
+      modalImageLink: largeImageLink,
     });
   };
 
