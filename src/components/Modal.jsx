@@ -14,15 +14,6 @@ export class Modal extends Component {
     document.removeEventListener('keydown', this.closeModal.bind(this));
   }
 
-  closeModal = event => {
-    if (
-      event.type === 'click' ||
-      (event.type === 'keydown' && event.key === 'Escape')
-    ) {
-      this.setState({ isModal: false });
-    }
-  };
-
   render() {
     return (
       this.state.isModal && (
