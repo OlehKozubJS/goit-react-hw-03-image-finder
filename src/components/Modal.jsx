@@ -8,10 +8,7 @@ export class Modal extends Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener(
-      'keydown',
-      this.props.clickFunction.bind(this)
-    );
+    document.removeEventListener('keydown', this.props.handleEvents.bind(this));
   }
 
   handleEvents = event => {
