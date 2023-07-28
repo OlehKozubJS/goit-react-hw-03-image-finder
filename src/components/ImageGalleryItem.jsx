@@ -8,10 +8,10 @@ export const ImageGalleryItem = ({
   return (
     <li
       className={ImageGalleryItemCSS.ImageGalleryItem}
-      onClick={() => clickFunction(imageLink)}
+      onClick={() => clickFunction(largeImageLink)}
     >
       <img
-        src={largeImageLink}
+        src={imageLink}
         alt=""
         className={ImageGalleryItemCSS.ImageGalleryItemImage}
       />
