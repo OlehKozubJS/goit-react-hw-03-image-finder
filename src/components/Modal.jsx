@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 
 export class Modal extends Component {
   componentDidMount() {
-    document.addEventListener('keydown', this.props.clickFunction.bind(this));
+    document.addEventListener('keydown', this.props.handleEvents.bind(this));
   }
 
   componentWillUnmount() {
@@ -13,6 +13,15 @@ export class Modal extends Component {
       this.props.clickFunction.bind(this)
     );
   }
+
+  handleEvents = event => {
+    if (
+      event.type === 'click' ||
+      (event.type === 'keydown' && event.key === 'Escape')
+    ) {
+      this.setState({ isModal: false });
+    }
+  };
 
   render() {
     return (
