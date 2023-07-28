@@ -93,6 +93,11 @@ export class ImageFinder extends Component {
           isLoadMore={this.state.isLoadMore}
           clickFunction={this.loadMoreFunction}
         />
+        {!this.state.isLoadMore && (
+          <div className={ButtonCSS.NoMoreMessage}>
+            We're sorry, but you've reached the end of search results.
+          </div>
+        )}
       </div>
     );
   }
