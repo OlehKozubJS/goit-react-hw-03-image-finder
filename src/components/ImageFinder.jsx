@@ -7,7 +7,7 @@ import { Modal } from './Modal';
 import { fetchImages } from './js/fetchImages';
 import ImageFinderCSS from './styles/ImageFinder.module.css';
 
-export class ImageFinder extends Component {
+export class App extends Component {
   state = {
     hasJustEntered: true,
     images: [],
@@ -76,7 +76,7 @@ export class ImageFinder extends Component {
 
   render() {
     return (
-      <div>
+      <div className={ImageFinderCSS.App}>
         {this.state.isModal && (
           <Modal
             clickFunction={this.closeModal}
