@@ -7,6 +7,7 @@ export const ImageGallery = ({ imageGalleryItems, itemClickFunction }) => {
       {imageGalleryItems.map(imageGalleryItem => (
         <ImageGalleryItem
           key={imageGalleryItem.id}
+          largeImageLink={imageGalleryItems.largeImageURL}
           imageLink={imageGalleryItem.webformatURL}
           clickFunction={itemClickFunction}
         />
