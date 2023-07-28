@@ -1,16 +1,9 @@
 /*
 * Стили компонента Button (Load more)
 */
-.visible {
-  display: flex;
-}
-
-.hidden {
-  display: none;
-}
-
 .ButtonContainer {
   padding-block: 24px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
