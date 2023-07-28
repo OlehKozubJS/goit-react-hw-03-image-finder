@@ -83,14 +83,11 @@ export class ImageFinder extends Component {
           />
         )}
         <Searchbar submitFunction={this.getSearchResults} />
-        {this.state.isLoading ? (
-          <Loader />
-        ) : (
-          <ImageGallery
-            imageGalleryItems={this.state.images}
-            itemClickFunction={this.openModal}
-          />
-        )}
+        {this.state.isLoading && <Loader />}
+        <ImageGallery
+          imageGalleryItems={this.state.images}
+          itemClickFunction={this.openModal}
+        />
         <Button
           hasJustEntered={this.state.hasJustEntered}
           isLoadMore={this.state.isLoadMore}
