@@ -5,6 +5,7 @@ import { Button } from './Button';
 import { Loader } from './Loader';
 import { Modal } from './Modal';
 import { fetchImages } from './js/fetchImages';
+import ImageFinderCSS from './styles/ImageFinder.module.css';
 
 export class ImageFinder extends Component {
   state = {
@@ -93,7 +94,7 @@ export class ImageFinder extends Component {
             <Button clickFunction={this.loadMoreFunction} />
           ) : (
             !this.state.isLoadMore && (
-              <div>
+              <div className={ImageFinderCSS.NoMoreMessage}>
                 We're sorry, but you've reached the end of search results.
               </div>
             )
