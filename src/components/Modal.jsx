@@ -19,13 +19,13 @@ export class Modal extends Component {
       event.type === 'click' ||
       (event.type === 'keydown' && event.key === 'Escape')
     ) {
-      this.setState({ isModal: false });
+      this.props.eventFunction;
     }
   };
 
   render() {
     return (
-      <div onClick={this.props.clickFunction} className={ModalCSS.Overlay}>
+      <div onClick={this.handleEvents} className={ModalCSS.Overlay}>
         <div className={ModalCSS.Modal}>
           <img src={this.props.imageLink} alt="" />
         </div>
@@ -35,6 +35,6 @@ export class Modal extends Component {
 }
 
 Modal.propTypes = {
-  clickFunction: propTypes.func.isRequired,
+  eventFunction: propTypes.func.isRequired,
   imageLink: propTypes.string.isRequired,
 };
