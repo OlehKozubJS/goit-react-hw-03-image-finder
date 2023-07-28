@@ -20,7 +20,7 @@ export const ImageGallery = ({ imageGalleryItems, itemClickFunction }) => {
 ImageGallery.propTypes = {
   imageGalleryItems: propTypes.arrayOf(
     propTypes.shape({
-      id: propTypes.string.isRequired,
+      id: propTypes.number.isRequired,
       largeImageURL: propTypes.string.isRequired,
       webformatURL: propTypes.string.isRequired,
     })
