@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import SearchbarCSS from './styles/Searchbar.module.css';
 import Icons from './images/icons.svg';
+import propTypes from 'prop-types';
 
 export class Searchbar extends Component {
   enterSearchData = event => {
@@ -38,3 +39,7 @@ export class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.propTypes = {
+  submitFunction: propTypes.func.isRequired,
+};
