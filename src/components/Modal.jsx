@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import ModalCSS from './styles/Modal.module.css';
+import propTypes from 'prop-types';
 
 export class Modal extends Component {
   componentDidMount() {
@@ -23,3 +24,8 @@ export class Modal extends Component {
     );
   }
 }
+
+Modal.propTypes = {
+  clickFunction: propTypes.func.isRequired,
+  imageLink: propTypes.string.isRequired,
+};
