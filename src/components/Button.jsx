@@ -1,4 +1,5 @@
 import ButtonCSS from './styles/Button.module.css';
+import propTypes from 'prop-types';
 
 export const Button = ({ clickFunction }) => {
   return (
@@ -8,4 +9,8 @@ export const Button = ({ clickFunction }) => {
       </button>
     </div>
   );
+};
+
+Button.propTypes = {
+  clickFunction: propTypes.func.isRequired,
 };
