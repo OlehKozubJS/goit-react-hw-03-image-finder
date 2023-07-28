@@ -88,15 +88,16 @@ export class ImageFinder extends Component {
           imageGalleryItems={this.state.images}
           itemClickFunction={this.openModal}
         />
-        {this.state.images.length > 0
-          ? this.state.isLoadMore && (
-              <Button clickFunction={this.loadMoreFunction} />
-            )
-          : !this.state.isLoadMore && (
+        {this.state.images.length > 0 &&
+          (this.state.isLoadMore ? (
+            <Button clickFunction={this.loadMoreFunction} />
+          ) : (
+            !this.state.isLoadMore && (
               <div>
                 We're sorry, but you've reached the end of search results.
               </div>
-            )}
+            )
+          ))}
       </div>
     );
   }
