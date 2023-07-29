@@ -4,25 +4,26 @@ import propTypes from 'prop-types';
 
 export class Modal extends Component {
   componentDidMount() {
-    document.addEventListener('keydown', this.handleEvents.bind(this));
+    document.addEventListener('keydown', this.handleKeyDown.bind(this));
   }
 
   componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleEvents.bind(this));
+    document.removeEventListener('keydown', this.handleKeyDown.bind(this));
   }
 
-  handleEvents = event => {
-    if (
-      event.type === 'click' ||
-      (event.type === 'keydown' && event.key === 'Escape')
-    ) {
+  handleKeyDown = event => {
+    if (event.key === 'Escape') {
       this.props.eventFunction();
     }
   };
 
+  handleClick = () => {
+    this.props.eventFunction();
+  };
+
   render() {
     return (
-      <div onClick={this.handleEvents} className={ModalCSS.Overlay}>
+      <div onClick={this.handleClick} className={ModalCSS.Overlay}>
         <div className={ModalCSS.Modal}>
           <img src={this.props.imageLink} alt="" />
         </div>
