@@ -17,8 +17,10 @@ export class Modal extends Component {
     }
   };
 
-  handleClick = () => {
-    this.props.eventFunction();
+  handleClick = event => {
+    if (event.target.className === ModalCSS.Overlay) {
+      this.props.eventFunction();
+    }
   };
 
   render() {
